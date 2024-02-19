@@ -46,11 +46,12 @@ WORKDIR /srv/sylius
 
 # build for production
 ENV APP_ENV=prod
+ENV COMPOSER_MEMORY_LIMIT=-1
 
 # prevent the reinstallation of vendors at every changes in the source code
 COPY composer.* symfony.lock ./
 RUN set -eux; \
-    composer install --prefer-dist --no-autoloader --no-interaction --no-scripts --no-progress --no-dev; \
+    composer install --prefer-dist --no-autoloader --no-interaction --no-scripts --no-progress ; \
     composer clear-cache
 
 # copy only specifically what we need
@@ -101,6 +102,8 @@ RUN set -eux; \
 COPY --from=base /srv/sylius/vendor/sylius/sylius/src/Sylius/Bundle/UiBundle/Resources/private       vendor/sylius/sylius/src/Sylius/Bundle/UiBundle/Resources/private/
 COPY --from=base /srv/sylius/vendor/sylius/sylius/src/Sylius/Bundle/AdminBundle/Resources/private    vendor/sylius/sylius/src/Sylius/Bundle/AdminBundle/Resources/private/
 COPY --from=base /srv/sylius/vendor/sylius/sylius/src/Sylius/Bundle/ShopBundle/Resources/private     vendor/sylius/sylius/src/Sylius/Bundle/ShopBundle/Resources/private/
+COPY --from=base /srv/sylius/vendor/bitbag/cms-plugin/webpack.config.js     vendor/bitbag/cms-plugin/webpack.config.js
+COPY --from=base /srv/sylius/vendor/bitbag/cms-plugin/src/Resources/assets     vendor/bitbag/cms-plugin/src/Resources/assets/
 COPY --from=base /srv/sylius/assets ./assets
 
 COPY webpack.config.js ./
