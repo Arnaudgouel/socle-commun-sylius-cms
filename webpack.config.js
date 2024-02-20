@@ -1,5 +1,6 @@
 const path = require('path');
 const Encore = require('@symfony/webpack-encore');
+const [ bitbagCmsShop, bitbagCmsAdmin ] = require('./vendor/bitbag/cms-plugin/webpack.config.js')
 
 const syliusBundles = path.resolve(__dirname, 'vendor/sylius/sylius/src/Sylius/Bundle/');
 const uiBundleScripts = path.resolve(syliusBundles, 'UiBundle/Resources/private/js/');
@@ -10,7 +11,6 @@ Encore
   .setOutputPath('public/build/shop/')
   .setPublicPath('/build/shop')
   .addEntry('shop-entry', './vendor/sylius/sylius/src/Sylius/Bundle/ShopBundle/Resources/private/entry.js')
-  .addEntry('bitbag-cms-shop', 'vendor/bitbag/cms-plugin/src/Resources/assets/shop/entry.js')
   .disableSingleRuntimeChunk()
   .cleanupOutputBeforeBuild()
   .enableSourceMaps(!Encore.isProduction())
@@ -31,7 +31,6 @@ Encore
   .setOutputPath('public/build/admin/')
   .setPublicPath('/build/admin')
   .addEntry('admin-entry', './vendor/sylius/sylius/src/Sylius/Bundle/AdminBundle/Resources/private/entry.js')
-  .addEntry('bitbag-cms-admin', 'vendor/bitbag/cms-plugin/src/Resources/assets/admin/entry.js')
   .disableSingleRuntimeChunk()
   .cleanupOutputBeforeBuild()
   .enableSourceMaps(!Encore.isProduction())
@@ -88,4 +87,4 @@ appAdminConfig.resolve.alias['sylius/bundle'] = syliusBundles;
 appAdminConfig.externals = Object.assign({}, appAdminConfig.externals, { window: 'window', document: 'document' });
 appAdminConfig.name = 'app.admin';
 
-module.exports = [shopConfig, adminConfig, appShopConfig, appAdminConfig];
+module.exports = [shopConfig, adminConfig, appShopConfig, appAdminConfig, bitbagCmsAdmin, bitbagCmsShop];

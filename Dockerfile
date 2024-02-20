@@ -103,6 +103,7 @@ COPY --from=base /srv/sylius/vendor/sylius/sylius/src/Sylius/Bundle/UiBundle/Res
 COPY --from=base /srv/sylius/vendor/sylius/sylius/src/Sylius/Bundle/AdminBundle/Resources/private    vendor/sylius/sylius/src/Sylius/Bundle/AdminBundle/Resources/private/
 COPY --from=base /srv/sylius/vendor/sylius/sylius/src/Sylius/Bundle/ShopBundle/Resources/private     vendor/sylius/sylius/src/Sylius/Bundle/ShopBundle/Resources/private/
 COPY --from=base /srv/sylius/vendor/bitbag/cms-plugin/src/Resources/assets vendor/bitbag/cms-plugin/src/Resources/assets/
+COPY --from=base /srv/sylius/vendor/bitbag/cms-plugin/webpack.config.js vendor/bitbag/cms-plugin/
 COPY --from=base /srv/sylius/assets ./assets
 
 COPY webpack.config.js ./
