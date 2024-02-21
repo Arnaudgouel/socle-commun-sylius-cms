@@ -5,6 +5,8 @@ namespace App\Form\Extension\BitBagCmsPlugin;
 use BitBag\SyliusCmsPlugin\Form\Type\Translation\PageTranslationType;
 use MonsieurBiz\SyliusRichEditorPlugin\Form\Type\RichEditorType;
 use Symfony\Component\Form\AbstractTypeExtension;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 
 class BitbagCmsPluginExtensionType extends AbstractTypeExtension
@@ -15,8 +17,6 @@ class BitbagCmsPluginExtensionType extends AbstractTypeExtension
             ->add('content', RichEditorType::class, [
                 'label' => 'sylius.ui.content',
                 'required' => false,
-//                'block_prefix' => 'rich_editor_copy',
-//                'tags' => ['pages']
             ])
             ->remove('breadcrumb')
             ->remove('nameWhenLinked')

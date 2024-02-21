@@ -26,6 +26,8 @@
     "require": {
         "php": "^8.0",
         "bitbag/cms-plugin": "^4.0",
+        "cweagans/composer-patches": "^1.7",
+        "friendsofsymfony/ckeditor-bundle": "^2.5",
         "monsieurbiz/sylius-rich-editor-plugin": "^2.4",
         "sylius/paypal-plugin": "^1.5",
         "sylius/sylius": "^1.12.11",
@@ -76,7 +78,8 @@
             "dealerdirect/phpcodesniffer-composer-installer": false,
             "phpstan/extension-installer": false,
             "symfony/thanks": false,
-            "symfony/runtime": true
+            "symfony/runtime": true,
+            "cweagans/composer-patches": true
         }
     },
     "extra": {
