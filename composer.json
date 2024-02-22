@@ -28,6 +28,7 @@
         "bitbag/cms-plugin": "^4.0",
         "cweagans/composer-patches": "^1.7",
         "friendsofsymfony/ckeditor-bundle": "^2.5",
+        "monsieurbiz/sylius-menu-plugin": "^1.2",
         "monsieurbiz/sylius-rich-editor-plugin": "^2.4",
         "sylius/paypal-plugin": "^1.5",
         "sylius/sylius": "^1.12.11",
