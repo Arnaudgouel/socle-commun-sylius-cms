@@ -16,7 +16,7 @@
 /docker/mysql/data/
 
 .idea
-.vscode
+.vscode/*
 
 
 ###> symfony/framework-bundle ###
