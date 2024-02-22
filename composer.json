@@ -83,6 +83,11 @@
         }
     },
     "extra": {
+        "patches": {
+            "bitbag/cms-plugin": [
+                "patches/bitbag-cms-plugin-src-twig-runtime-rendercontentruntime-php.patch"
+            ]
+        },
         "branch-alias": {
             "dev-master": "1.12-dev"
         },
