@@ -15,8 +15,8 @@
 /docker-compose.override.yml
 /docker/mysql/data/
 
-/.idea
-/.vscode
+.idea
+.vscode
 
 
 ###> symfony/framework-bundle ###
